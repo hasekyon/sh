@@ -11,7 +11,7 @@ iptables -F
 #ssh setting
 SSH_ACCEPT_IP[0]=192.168.56.1
 
-for IP in $SSH_ACCEPT_IP
+for IP in ${SSH_ACCEPT_IP[@]}
 do
 iptables -A INPUT -s $IP -p tcp --dport 22 -j ACCEPT
 done
